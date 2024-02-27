@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lunar-eclips</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: aliceblue;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .universe {
+        width: 400px;
+        aspect-ratio: 1;
+        background-color: rgb(204, 143, 28);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: skychange 10s linear infinite;
+      }
+
+      .sun {
+        width: 150px;
+        aspect-ratio: 1;
+        background-color: yellow;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sun::after {
+        content: "";
+        position: absolute;
+
+        width: 150px;
+        aspect-ratio: 1;
+        background-color: black;
+        border-radius: 50%;
+
+        animation: moonwalk 10s ease-in-out infinite;
+      }
+
+      @keyframes moonwalk {
+        0% {
+          translate: 100%;
+          scale: 1;
+        }
+        50% {
+          translate: 0%;
+          scale: 0.95;
+        }
+        100% {
+          translate: -100%;
+          scale: 0.95;
+        }
+      }
+
+      @keyframes skychange {
+        50% {
+          background-color: black;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+  <div class="universe">
+    <div class="sun"></div>
+  </div>
+</html>

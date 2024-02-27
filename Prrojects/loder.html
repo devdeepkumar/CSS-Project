@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>per-loder</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(18, 189, 246);
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .loder {
+        width: 12rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: purple;
+        position: relative;
+        animation: rotate1 2s linear infinite reverse;
+      }
+
+      .loder::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10rem;
+        aspect-ratio: 1;
+        background-color: rgb(18, 189, 246);
+        z-index: 1;
+        border-radius: 50%;
+      }
+      .loder::after {
+        content: "";
+        position: absolute;
+        top: -1rem;
+        left: 5rem;
+        width: 3rem;
+        aspect-ratio: 1;
+        background-color: rgb(18, 189, 246);
+        z-index: 1;
+        border-radius: 50%;
+        background-color: #600372;
+        box-shadow: 0 0 1rem #600372, 0 0 1.5rem #600372, 0 0 2rem #600372,
+          0 0 2.5rem #600372, 0 0 3rem #600372;
+      }
+
+      @keyframes rotate1 {
+        100% {
+          rotate: 360deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loder"></div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake-button</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #191825;
+        }
+
+    button{
+        height: 4rem;
+        aspect-ratio: 2;
+        border: 2px solid blue;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    button:hover{
+        border: 2px solid red;
+        background-color: blanchedalmond;
+        animation: shakeno .1s linear reverse;
+    }
+    @keyframes shakeno {
+        
+        0%{
+            rotate:15deg;
+        }
+        100%{
+            rotate:-15deg;
+        }
+
+    }
+    </style>
+</head>
+<body>
+    <button type="button">Shake</button>
+</body>
+</html>
